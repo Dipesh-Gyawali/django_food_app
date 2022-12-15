@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+{% block body %}
+
+<div class="container">
+    <div class="row m-3">
+        <div class="col-md-6">
+            <img src="{{item.image}}" class="card" height="150px" width="250px">
+        </div>
+        <div class="col-md-6">
+            <h2>{{item.name}}</h2>
+            <h3>${{item.price}}</h3>
+            <h5>{{item.desc}}</h5>
+            <a href="{% url 'update_item' item.id %}" class="btn btn-warning">UPDATE</a> 
+            <a href="{% url 'delete_item' item.id %}" class="btn btn-danger">DELETE</a>
+
+        </div>    
+    </div>
+</div>
+
+{% endblock body %}  
+
+
+</body>
+</html>
